@@ -1,0 +1,1023 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="login_dogrula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="kulad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sifre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="login_dogrulaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="login_dogrulaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="giris_bilgileri">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="kulad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sifre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="giris_bilgileriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="giris_bilgileriResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="kullanici_kayit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soyad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="kulad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sifre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="kullanici_kayitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kullanici_kayitResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dizi_arama">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deger" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dizi_aramaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dizi_aramaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="kategoriler">
+        <s:complexType />
+      </s:element>
+      <s:element name="kategorilerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="kategorilerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="diziler">
+        <s:complexType />
+      </s:element>
+      <s:element name="dizilerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dizilerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="diziler_genelkategori">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="genelkatid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="diziler_genelkategoriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="diziler_genelkategoriResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="diziler_id">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dizi_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="diziler_idResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="diziler_idResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="kategori_diziler">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kategori_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="kategori_dizilerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="kategori_dizilerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="slider">
+        <s:complexType />
+      </s:element>
+      <s:element name="sliderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sliderResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="genel_kategoriler">
+        <s:complexType />
+      </s:element>
+      <s:element name="genel_kategorilerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="genel_kategorilerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sezonlar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dizi_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sezonlarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sezonlarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bolumler">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dizi_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sezon_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bolumlerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bolumlerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bolumler_izle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dizi_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sezon_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bolum_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="bolumler_izleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bolumler_izleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="watch_bolum_id_getir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dizi_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sezon_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="watch_bolum_id_getirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="watch_bolum_id_getirResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="user_list">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kul_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="user_listResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_listResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="user_info_get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kul_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="user_info_getResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_info_getResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="user_info_p_update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kul_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soyad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="kulad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sifre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="user_info_p_updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="user_info_p_updateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="user_info_update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kul_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soyad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="kulad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="user_info_updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="user_info_updateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listeye_ekle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kul_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dizi_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listeye_ekleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="listeye_ekleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="iletisim_ekle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soyad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tur" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mesaj" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="kul_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="iletisim_ekleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iletisim_ekleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="login_dogrulaSoapIn">
+    <wsdl:part name="parameters" element="tns:login_dogrula" />
+  </wsdl:message>
+  <wsdl:message name="login_dogrulaSoapOut">
+    <wsdl:part name="parameters" element="tns:login_dogrulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="giris_bilgileriSoapIn">
+    <wsdl:part name="parameters" element="tns:giris_bilgileri" />
+  </wsdl:message>
+  <wsdl:message name="giris_bilgileriSoapOut">
+    <wsdl:part name="parameters" element="tns:giris_bilgileriResponse" />
+  </wsdl:message>
+  <wsdl:message name="kullanici_kayitSoapIn">
+    <wsdl:part name="parameters" element="tns:kullanici_kayit" />
+  </wsdl:message>
+  <wsdl:message name="kullanici_kayitSoapOut">
+    <wsdl:part name="parameters" element="tns:kullanici_kayitResponse" />
+  </wsdl:message>
+  <wsdl:message name="dizi_aramaSoapIn">
+    <wsdl:part name="parameters" element="tns:dizi_arama" />
+  </wsdl:message>
+  <wsdl:message name="dizi_aramaSoapOut">
+    <wsdl:part name="parameters" element="tns:dizi_aramaResponse" />
+  </wsdl:message>
+  <wsdl:message name="kategorilerSoapIn">
+    <wsdl:part name="parameters" element="tns:kategoriler" />
+  </wsdl:message>
+  <wsdl:message name="kategorilerSoapOut">
+    <wsdl:part name="parameters" element="tns:kategorilerResponse" />
+  </wsdl:message>
+  <wsdl:message name="dizilerSoapIn">
+    <wsdl:part name="parameters" element="tns:diziler" />
+  </wsdl:message>
+  <wsdl:message name="dizilerSoapOut">
+    <wsdl:part name="parameters" element="tns:dizilerResponse" />
+  </wsdl:message>
+  <wsdl:message name="diziler_genelkategoriSoapIn">
+    <wsdl:part name="parameters" element="tns:diziler_genelkategori" />
+  </wsdl:message>
+  <wsdl:message name="diziler_genelkategoriSoapOut">
+    <wsdl:part name="parameters" element="tns:diziler_genelkategoriResponse" />
+  </wsdl:message>
+  <wsdl:message name="diziler_idSoapIn">
+    <wsdl:part name="parameters" element="tns:diziler_id" />
+  </wsdl:message>
+  <wsdl:message name="diziler_idSoapOut">
+    <wsdl:part name="parameters" element="tns:diziler_idResponse" />
+  </wsdl:message>
+  <wsdl:message name="kategori_dizilerSoapIn">
+    <wsdl:part name="parameters" element="tns:kategori_diziler" />
+  </wsdl:message>
+  <wsdl:message name="kategori_dizilerSoapOut">
+    <wsdl:part name="parameters" element="tns:kategori_dizilerResponse" />
+  </wsdl:message>
+  <wsdl:message name="sliderSoapIn">
+    <wsdl:part name="parameters" element="tns:slider" />
+  </wsdl:message>
+  <wsdl:message name="sliderSoapOut">
+    <wsdl:part name="parameters" element="tns:sliderResponse" />
+  </wsdl:message>
+  <wsdl:message name="genel_kategorilerSoapIn">
+    <wsdl:part name="parameters" element="tns:genel_kategoriler" />
+  </wsdl:message>
+  <wsdl:message name="genel_kategorilerSoapOut">
+    <wsdl:part name="parameters" element="tns:genel_kategorilerResponse" />
+  </wsdl:message>
+  <wsdl:message name="sezonlarSoapIn">
+    <wsdl:part name="parameters" element="tns:sezonlar" />
+  </wsdl:message>
+  <wsdl:message name="sezonlarSoapOut">
+    <wsdl:part name="parameters" element="tns:sezonlarResponse" />
+  </wsdl:message>
+  <wsdl:message name="bolumlerSoapIn">
+    <wsdl:part name="parameters" element="tns:bolumler" />
+  </wsdl:message>
+  <wsdl:message name="bolumlerSoapOut">
+    <wsdl:part name="parameters" element="tns:bolumlerResponse" />
+  </wsdl:message>
+  <wsdl:message name="bolumler_izleSoapIn">
+    <wsdl:part name="parameters" element="tns:bolumler_izle" />
+  </wsdl:message>
+  <wsdl:message name="bolumler_izleSoapOut">
+    <wsdl:part name="parameters" element="tns:bolumler_izleResponse" />
+  </wsdl:message>
+  <wsdl:message name="watch_bolum_id_getirSoapIn">
+    <wsdl:part name="parameters" element="tns:watch_bolum_id_getir" />
+  </wsdl:message>
+  <wsdl:message name="watch_bolum_id_getirSoapOut">
+    <wsdl:part name="parameters" element="tns:watch_bolum_id_getirResponse" />
+  </wsdl:message>
+  <wsdl:message name="user_listSoapIn">
+    <wsdl:part name="parameters" element="tns:user_list" />
+  </wsdl:message>
+  <wsdl:message name="user_listSoapOut">
+    <wsdl:part name="parameters" element="tns:user_listResponse" />
+  </wsdl:message>
+  <wsdl:message name="user_info_getSoapIn">
+    <wsdl:part name="parameters" element="tns:user_info_get" />
+  </wsdl:message>
+  <wsdl:message name="user_info_getSoapOut">
+    <wsdl:part name="parameters" element="tns:user_info_getResponse" />
+  </wsdl:message>
+  <wsdl:message name="user_info_p_updateSoapIn">
+    <wsdl:part name="parameters" element="tns:user_info_p_update" />
+  </wsdl:message>
+  <wsdl:message name="user_info_p_updateSoapOut">
+    <wsdl:part name="parameters" element="tns:user_info_p_updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="user_info_updateSoapIn">
+    <wsdl:part name="parameters" element="tns:user_info_update" />
+  </wsdl:message>
+  <wsdl:message name="user_info_updateSoapOut">
+    <wsdl:part name="parameters" element="tns:user_info_updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="listeye_ekleSoapIn">
+    <wsdl:part name="parameters" element="tns:listeye_ekle" />
+  </wsdl:message>
+  <wsdl:message name="listeye_ekleSoapOut">
+    <wsdl:part name="parameters" element="tns:listeye_ekleResponse" />
+  </wsdl:message>
+  <wsdl:message name="iletisim_ekleSoapIn">
+    <wsdl:part name="parameters" element="tns:iletisim_ekle" />
+  </wsdl:message>
+  <wsdl:message name="iletisim_ekleSoapOut">
+    <wsdl:part name="parameters" element="tns:iletisim_ekleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Sql_WebServiceSoap">
+    <wsdl:operation name="login_dogrula">
+      <wsdl:input message="tns:login_dogrulaSoapIn" />
+      <wsdl:output message="tns:login_dogrulaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="giris_bilgileri">
+      <wsdl:input message="tns:giris_bilgileriSoapIn" />
+      <wsdl:output message="tns:giris_bilgileriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="kullanici_kayit">
+      <wsdl:input message="tns:kullanici_kayitSoapIn" />
+      <wsdl:output message="tns:kullanici_kayitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dizi_arama">
+      <wsdl:input message="tns:dizi_aramaSoapIn" />
+      <wsdl:output message="tns:dizi_aramaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="kategoriler">
+      <wsdl:input message="tns:kategorilerSoapIn" />
+      <wsdl:output message="tns:kategorilerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="diziler">
+      <wsdl:input message="tns:dizilerSoapIn" />
+      <wsdl:output message="tns:dizilerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="diziler_genelkategori">
+      <wsdl:input message="tns:diziler_genelkategoriSoapIn" />
+      <wsdl:output message="tns:diziler_genelkategoriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="diziler_id">
+      <wsdl:input message="tns:diziler_idSoapIn" />
+      <wsdl:output message="tns:diziler_idSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="kategori_diziler">
+      <wsdl:input message="tns:kategori_dizilerSoapIn" />
+      <wsdl:output message="tns:kategori_dizilerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="slider">
+      <wsdl:input message="tns:sliderSoapIn" />
+      <wsdl:output message="tns:sliderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="genel_kategoriler">
+      <wsdl:input message="tns:genel_kategorilerSoapIn" />
+      <wsdl:output message="tns:genel_kategorilerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sezonlar">
+      <wsdl:input message="tns:sezonlarSoapIn" />
+      <wsdl:output message="tns:sezonlarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="bolumler">
+      <wsdl:input message="tns:bolumlerSoapIn" />
+      <wsdl:output message="tns:bolumlerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="bolumler_izle">
+      <wsdl:input message="tns:bolumler_izleSoapIn" />
+      <wsdl:output message="tns:bolumler_izleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="watch_bolum_id_getir">
+      <wsdl:input message="tns:watch_bolum_id_getirSoapIn" />
+      <wsdl:output message="tns:watch_bolum_id_getirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="user_list">
+      <wsdl:input message="tns:user_listSoapIn" />
+      <wsdl:output message="tns:user_listSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="user_info_get">
+      <wsdl:input message="tns:user_info_getSoapIn" />
+      <wsdl:output message="tns:user_info_getSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="user_info_p_update">
+      <wsdl:input message="tns:user_info_p_updateSoapIn" />
+      <wsdl:output message="tns:user_info_p_updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="user_info_update">
+      <wsdl:input message="tns:user_info_updateSoapIn" />
+      <wsdl:output message="tns:user_info_updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listeye_ekle">
+      <wsdl:input message="tns:listeye_ekleSoapIn" />
+      <wsdl:output message="tns:listeye_ekleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="iletisim_ekle">
+      <wsdl:input message="tns:iletisim_ekleSoapIn" />
+      <wsdl:output message="tns:iletisim_ekleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Sql_WebServiceSoap" type="tns:Sql_WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="login_dogrula">
+      <soap:operation soapAction="http://tempuri.org/login_dogrula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="giris_bilgileri">
+      <soap:operation soapAction="http://tempuri.org/giris_bilgileri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kullanici_kayit">
+      <soap:operation soapAction="http://tempuri.org/kullanici_kayit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dizi_arama">
+      <soap:operation soapAction="http://tempuri.org/dizi_arama" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kategoriler">
+      <soap:operation soapAction="http://tempuri.org/kategoriler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="diziler">
+      <soap:operation soapAction="http://tempuri.org/diziler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="diziler_genelkategori">
+      <soap:operation soapAction="http://tempuri.org/diziler_genelkategori" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="diziler_id">
+      <soap:operation soapAction="http://tempuri.org/diziler_id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kategori_diziler">
+      <soap:operation soapAction="http://tempuri.org/kategori_diziler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="slider">
+      <soap:operation soapAction="http://tempuri.org/slider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="genel_kategoriler">
+      <soap:operation soapAction="http://tempuri.org/genel_kategoriler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sezonlar">
+      <soap:operation soapAction="http://tempuri.org/sezonlar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bolumler">
+      <soap:operation soapAction="http://tempuri.org/bolumler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bolumler_izle">
+      <soap:operation soapAction="http://tempuri.org/bolumler_izle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="watch_bolum_id_getir">
+      <soap:operation soapAction="http://tempuri.org/watch_bolum_id_getir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="user_list">
+      <soap:operation soapAction="http://tempuri.org/user_list" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="user_info_get">
+      <soap:operation soapAction="http://tempuri.org/user_info_get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="user_info_p_update">
+      <soap:operation soapAction="http://tempuri.org/user_info_p_update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="user_info_update">
+      <soap:operation soapAction="http://tempuri.org/user_info_update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listeye_ekle">
+      <soap:operation soapAction="http://tempuri.org/listeye_ekle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iletisim_ekle">
+      <soap:operation soapAction="http://tempuri.org/iletisim_ekle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Sql_WebServiceSoap12" type="tns:Sql_WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="login_dogrula">
+      <soap12:operation soapAction="http://tempuri.org/login_dogrula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="giris_bilgileri">
+      <soap12:operation soapAction="http://tempuri.org/giris_bilgileri" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kullanici_kayit">
+      <soap12:operation soapAction="http://tempuri.org/kullanici_kayit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dizi_arama">
+      <soap12:operation soapAction="http://tempuri.org/dizi_arama" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kategoriler">
+      <soap12:operation soapAction="http://tempuri.org/kategoriler" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="diziler">
+      <soap12:operation soapAction="http://tempuri.org/diziler" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="diziler_genelkategori">
+      <soap12:operation soapAction="http://tempuri.org/diziler_genelkategori" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="diziler_id">
+      <soap12:operation soapAction="http://tempuri.org/diziler_id" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kategori_diziler">
+      <soap12:operation soapAction="http://tempuri.org/kategori_diziler" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="slider">
+      <soap12:operation soapAction="http://tempuri.org/slider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="genel_kategoriler">
+      <soap12:operation soapAction="http://tempuri.org/genel_kategoriler" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sezonlar">
+      <soap12:operation soapAction="http://tempuri.org/sezonlar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bolumler">
+      <soap12:operation soapAction="http://tempuri.org/bolumler" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bolumler_izle">
+      <soap12:operation soapAction="http://tempuri.org/bolumler_izle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="watch_bolum_id_getir">
+      <soap12:operation soapAction="http://tempuri.org/watch_bolum_id_getir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="user_list">
+      <soap12:operation soapAction="http://tempuri.org/user_list" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="user_info_get">
+      <soap12:operation soapAction="http://tempuri.org/user_info_get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="user_info_p_update">
+      <soap12:operation soapAction="http://tempuri.org/user_info_p_update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="user_info_update">
+      <soap12:operation soapAction="http://tempuri.org/user_info_update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listeye_ekle">
+      <soap12:operation soapAction="http://tempuri.org/listeye_ekle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iletisim_ekle">
+      <soap12:operation soapAction="http://tempuri.org/iletisim_ekle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Sql_WebService">
+    <wsdl:port name="Sql_WebServiceSoap" binding="tns:Sql_WebServiceSoap">
+      <soap:address location="https://localhost:44398/Sql_WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Sql_WebServiceSoap12" binding="tns:Sql_WebServiceSoap12">
+      <soap12:address location="https://localhost:44398/Sql_WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

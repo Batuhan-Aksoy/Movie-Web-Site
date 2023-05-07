@@ -1,0 +1,724 @@
+﻿body {
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+header {
+ display:flex;
+ justify-content:space-between;
+ background-color:black;
+ padding:0.5rem;
+}
+/* Logo css */
+.logo {
+    width:8%;
+}
+.logo a {
+    color:white;
+    text-decoration:none;
+}
+.menu {
+    padding-top:2%;
+    display:none;
+}
+.menu ul {
+    display:flex;
+}
+.menu ul li {
+    list-style-type:none;
+    color:white;
+    margin:0 10% 0 0;
+    cursor:pointer;
+    font-size:110%;
+}
+.menu li a{
+    text-decoration:none;
+    color:white;
+}
+.menu-box {
+    position:absolute;
+    width:10%;
+    z-index:2;
+    display:none;
+}
+.menu-box ul{
+    padding:0;
+    display:flex;
+    flex-direction:column;
+}
+.menu-box ul li {
+    padding:10%;
+    width:100%;
+    background-color:black;
+    text-align:center;
+}
+.menu-box ul li:hover {
+    color:black;
+    background-color:white;
+}
+/* Arama butonu */
+.arama {
+ width:30%;
+ padding-top:1.5%;
+ display:none;
+ margin-top:1.2%;
+ position:relative;
+}
+.arama-textbox {
+    width:80%;
+    height:25px;
+    border-radius:5px; 
+    border-color:white;
+}
+.arama-button {
+    width: 20%;
+    height: 27px;
+    background-color: yellow;
+    color: black;
+    border-radius: 5px;
+    margin:0.5% 0 0 1%;
+    cursor:pointer;
+}
+.arama-sonuc-box {
+    
+    width:100%; 
+    background-color:#18191a;
+    position:absolute;
+    left:0;
+    top:80%;
+    height:auto;
+    display:none;
+    border-radius:10px;
+    padding:1%;
+    z-index:2;
+}
+.arama-sonuc-box ul {
+  padding-left:2%;
+}
+.arama-sonuc-box i {
+    position:absolute;
+    right:2%;
+    top:8%;
+    color:white;
+    font-size:130%;
+    cursor:pointer;
+    z-index:2;
+    
+}
+
+.arama-sonuc ul a {
+    text-decoration:none;
+    color:white;
+    width:100%;
+    
+}
+.arama-sonuc ul li {
+    list-style-type: none;
+    height: 30px;
+    border-bottom: 2px solid white;
+    margin:1rem 0;
+}
+
+/*Sağ menu*/
+.sag-menu {
+    padding-top:0.5rem;
+    margin:1.3% 3% 0 0;
+}
+.sag-menu ul{
+    display:flex;
+}
+.sag-menu ul li {
+    list-style-type:none;
+    margin:0 1.5rem 0 0;
+    color:white;
+    cursor:pointer;
+    font-size:110%;
+}
+
+
+
+/*Slider css*/
+
+.slider{
+    width:100%;
+    display:flex;
+    height:auto;
+    
+}
+.side{
+    width:100%;
+    display:inline;
+}
+
+.slider-box {
+    width:50%;
+    margin:auto;
+    padding:1% 0;
+    position:absolute;
+    top:80%;
+    left:30%;
+}
+.slider-box ul {
+    display:flex;
+    justify-content:space-evenly;
+    padding:0;
+}
+.slider-box ul li {
+    width:19%;
+    height:100px;
+    background-color:white;
+    list-style-type:none;
+    cursor:pointer;
+    border-radius:10px;
+}
+.slider-box ul li img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+}
+.left-button {
+    position: absolute;
+    margin: 18% 0 0 0;
+    cursor: pointer;
+    color: white;
+    font-size: 200%;
+    z-index:2;
+}
+.play-button {
+    position: absolute;
+    font-size:250%;
+    margin: 32% 0 0 8%;
+    cursor: pointer;
+    color: white;
+    z-index:2;
+}
+.watch-name {
+    position: absolute;
+    margin: 32.5% 0 0 11%;
+    cursor: pointer;
+    color: white;
+    font-size: 150%;
+}
+.film-name {
+    color: white;
+    position: absolute;
+    margin: 30% 0 0 8%;
+    font-size:150%;
+}
+.right-button {
+    position: absolute;
+    right:0;
+    margin: 18% 0 0 0;
+    cursor: pointer;
+    color: white;
+    font-size: 200%;
+    z-index: 2;
+}
+/*Content CSS*/
+.content {
+    width: 100%;
+    background-color: #18191a;
+    margin-top: -1.33%;
+    height: auto;
+}
+.content-box {
+    width: 80%;
+    height: 70%;
+    margin:1% auto;
+    padding:0.5% 0;
+    
+}
+.content-box span{
+    color:white;
+    font-size:20px;
+    padding-left:2.3%;  
+}
+.content-box-side {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top:1%;
+}
+.content-box-side-item {
+    width: 23.5%;
+    position: relative;
+}
+    .content-box-side-item:hover {
+        transition-property: all;
+        transition-duration:700ms;
+        transition-timing-function: linear;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+.content-box-side-button {
+    color: white;
+    margin: auto 0;
+    cursor: pointer;
+    font-size:150%;
+}
+.content-box-side-playbutton {
+    color: white;
+    font-size: 250%;
+    position: absolute;
+    left: 46.5%;
+    top: 45%;
+    cursor: pointer;
+    display: none; 
+    transition-property: all;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out; 
+}
+.content-box-side-playbutton:hover {
+        color: yellow;
+        font-size: 300%;
+        left: 45%;
+        top: 45%;
+}
+.content-box-side-text {
+    color: white;
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    display: none;
+}
+.content-theree-box {
+    width:95%;
+    height:350px;
+    display:flex; 
+    margin:0 auto;
+    position:relative;
+}
+    .content-theree-box .content-box-side-item {
+        width:33.3%;
+        height:100%;
+    }
+    /*Footer CSS*/
+    footer {
+        width: 100%;
+        background-color: black;
+        color: white;
+        margin-top: -1.33%;
+        padding: 1%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-evenly;
+    }
+footer span{
+    color:gray;
+}
+.footer-about ul{
+    padding:0;
+    margin:0;
+}
+.footer-about ul li {
+    list-style-type: none;
+    margin:5% 0 0 0;
+    cursor:pointer;
+}
+.footer-about ul li a {
+    text-decoration:none;
+    color:white;
+}
+.footer-social-medya ul {
+    display:flex;
+    padding: 0;
+}
+.footer-social-medya ul li {
+    list-style-type: none;
+    margin:0 5% 0 0;
+    font-size:150%;
+    cursor:pointer;
+}
+.footer-applications ul {
+    padding:0;
+    margin:0;
+}
+.footer-applications ul li {
+    list-style-type:none;
+    margin:7% 0 0 0;
+    cursor:pointer;
+}
+
+/*İletişim sayfası css kodu*/
+.comn-content{
+    width:100%;
+    background-color:#18191a;
+    color:white;
+    margin:0 auto;
+   padding:1rem;
+   box-sizing:border-box;
+}
+.comn-content h2 {
+    margin:0;
+}
+.comn-box {
+    width:100%;
+    display:flex;
+    justify-content:space-evenly;
+    line-height:2rem;
+    padding:0 5%;
+    box-sizing:border-box;
+}
+.comn-button {
+    width:80%;
+    height:2.5rem;
+    margin:1rem auto;
+    background-color:green;
+    color:white;
+    text-align:center;
+    padding-top:0.7%;
+    border-radius:10px;
+    box-sizing:border-box;
+    cursor:pointer;
+    
+}
+.comn-form {
+    display:none;
+    width:100%;
+    height:auto;
+    line-height:2rem;
+    font-size:120%;
+    padding:0 5% 2% 5%;
+    box-sizing:border-box;
+}
+.comn-form input {
+    width:100%;
+    height:30px;
+    border-radius:5px;
+    font-size:16px;
+}
+.comn-form select {
+    width:100%;
+    height:30px;
+    border-radius:5px;
+    font-size:16px;
+}
+
+/*Login ve Kayıt ol css kodu*/
+.login-box {
+    display:none;
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #18191a;
+    color:white;
+    padding:1% 2%;
+    box-sizing:border-box;
+    line-height:2rem;
+    position:absolute;
+    left:20%;
+    top:25%;
+    z-index:2;
+}
+.login-box input {
+    width:100%;
+    height:30px;
+    font-size:16px;
+    border-radius:5px;
+
+}
+.login-top {
+    display:flex;
+    justify-content:space-between;
+}
+.login-top i {
+    font-size:120%;
+    cursor:pointer;
+}
+.record-box {
+    display: none;
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #18191a;
+    color: white;
+    padding: 1% 2%;
+    box-sizing: border-box;
+    line-height: 2rem;
+    position: absolute;
+    left: 20%;
+    z-index: 2;
+    top:7%;
+}
+.record-box input {
+        width: 100%;
+        height: 30px;
+        font-size: 16px;
+        border-radius: 5px;
+}
+.record-top {
+    display:flex;
+    justify-content:space-between;
+}
+.record-top i {
+        font-size: 120%;
+        cursor: pointer;
+}
+
+/*movies.aspx css kodu*/
+.movies-content {
+    width: 100%;
+    height: auto;
+    background-color: #18191a;
+    
+}
+.movies-content h2 {
+    margin:0 0 0.5rem 21%;
+    color:white;
+    
+}
+.movies-row-box {
+        width: 60%;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0 auto;
+ }
+.movies-box {
+    width: 24%;
+    height: 200px;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 10px;
+  
+}
+.movies-box img {
+    width:100%;
+    height:100%;
+    border-radius:10px;
+}
+.movies-icon {
+    position:absolute;
+    z-index:2;
+    color:white; 
+    left:47%;
+    top:45%;
+    font-size:150%;
+    display:none;
+    transition-property:all;
+    transition-duration:1000ms;
+    transition-timing-function:ease-in-out;
+}
+.movies-icon:hover {
+    color:yellow;
+    
+}
+.movies-about {
+    position:absolute;
+    color:white;
+    bottom:0; 
+    right:5px;
+    cursor:pointer;
+    display:none;
+}
+.movies-name {
+    position: absolute;
+    color: white;
+    bottom: 0;
+    left: 5px;
+    display: none;
+}
+.movies-about a {
+    color:white;
+    text-decoration:none;
+}
+/*Details css*/
+.details-side {
+    width:100%;
+    height:auto;
+    background-color:#18191a;
+}
+.details-content {
+    position:relative;
+    width:100%;
+    height:500px;
+    background-color:#18191a;
+}
+.details-content i {
+    position:absolute;
+    top:40%;
+    left:50%;
+    font-size:500%;
+    color:white;
+    transition-property:all;
+    transition-duration:700ms;
+    transition-timing-function:ease-in-out;
+    cursor:pointer;
+}
+.details-content i:hover {
+    color:yellow;
+    font-size:550%;
+}
+.details-content span {
+    color:white;
+    font-size:2rem;
+    position:absolute;
+    top:60%;
+    left:15%;
+}
+.details-content p {
+    color:white;
+    font-size:1.2rem;
+    position:absolute;
+    top:65%;
+    left:15%;
+}
+.details-add-button {
+    width:10%;
+    background-color:yellow;
+    color:black;
+    padding-top:0.5%;
+    height:30px;
+    box-sizing:border-box;
+    text-align:center;
+    font-weight:bold;
+    border-radius:10px;
+    position:absolute;
+    top:90%;
+    left:15%;
+    cursor:pointer;
+}
+.details-bar {
+    background-color:black;
+    width: 80%;
+    
+    margin: 0 auto;
+    height: auto;
+    box-sizing:border-box;
+}
+.details-bar ul {
+    display:flex;
+    justify-content:space-evenly;
+    height:40px;
+    
+}
+.details-bar ul li {
+    list-style-type:none;
+    width:100%;
+    text-align:center;
+    color:gray;
+    cursor:pointer;
+    height:40px;
+    padding-top:20%;
+    box-sizing:border-box;
+
+}
+.details-bar ul li:hover {
+    color:white;
+    border-bottom:2px white solid;
+
+}
+.season-content {
+    width:80%;
+    margin:1rem auto;
+}
+.season-content h2 {
+    color:white;
+}
+.season-box {
+    width:100%;
+    display:flex;
+    justify-content:space-evenly;
+    
+}
+.season-box-item {
+    width: 20%;
+    position:relative;
+}
+.season-box-item i {
+        display:none;
+        position: absolute;
+        top: 42%;
+        left: 42%;
+        font-size: 250%;
+        color: white;
+        transition-property: all;
+        transition-duration: 700ms;
+        transition-timing-function: ease-in-out;
+        cursor: pointer;
+    }
+    .season-box-item i:hover {
+        color: yellow;
+        font-size: 300%;
+    }
+.bolum-ad {
+    color:white;
+    margin:2px;
+}
+
+/*Watch.aspx css kodu*/
+.watch-content {
+    width:100%;
+    background-color:#18191a;
+    height:auto;
+}
+.watch-box {
+    width:80%;
+    margin:0 auto;
+    box-sizing:border-box;
+}
+.watch-detail {
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    padding:1rem;
+}
+.watch-add-button {
+    width: 10%;
+    background-color: yellow;
+    color: black;
+    padding-top: 0.5%;
+    height: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.kul-menu-box {
+    position: absolute;
+    width: 10%;
+    z-index: 2;
+    display: none;
+    background-color:#18191a;
+}
+.kul-menu-box ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+.kul-menu-box ul a {
+    text-decoration:none;
+}
+.kul-menu-box ul a li {
+    list-style-type:none;
+    width:100%;
+    padding:10%;
+    box-sizing:border-box;
+    color:white;
+}
+.kul-menu-box ul a li:hover {
+    color:black;
+    background-color:white;
+}
+.user-info-content {
+    width:100%;
+    background-color:#18191a;
+    margin:0 auto;
+    height:auto;
+    padding:0 1rem;
+    box-sizing:border-box;
+}
+.user-info-content h3 {
+    margin:0;
+    color:white;
+}
+.user-info-content input {
+    width:100%;
+    height:30px;
+    border-radius:10px;
+    font-size:1rem;
+}
+.user-info-content label {
+    color:white;
+}
