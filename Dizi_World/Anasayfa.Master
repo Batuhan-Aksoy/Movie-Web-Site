@@ -1,0 +1,143 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Anasayfa.master.cs" Inherits="Dizi_World.Anasayfa" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Dizi World</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>    
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="main.css"/>
+    
+</head>
+<body>
+   <form id="form1" runat="server">    
+            <header>
+                <div class="logo">
+                    <a href="İndex.aspx"><img src="images/logo.png" width="100%" height="100%"/></a>
+                </div>
+                <div  id="search" class="arama" runat="server">
+                       <asp:TextBox ID="TextBox_dizi_ara" CssClass="arama-textbox" placeholder="Dizi Ara" runat="server" required></asp:TextBox>
+                       
+                       <div runat="server" id="arama_sonuc_box" class="arama-sonuc-box">
+                           <a href="#" runat="server" onserverclick="arama_box_close_Click"><i class="fa fa-times" aria-hidden="true"></i></a>
+                           <div runat="server" id="arama_sonuc" class="arama-sonuc">
+
+                           </div>
+                       </div>            
+                       <asp:Button ID="Search_Button" runat="server" Text="Ara" CssClass="arama-button" OnClick="Search_Button_Click" />                      
+                </div>
+
+                <div class="menu" id="menu">
+                    <ul>
+                        <li><a href="İndex.aspx">Anasayfa</a></li>
+                        <li onmousemove="menukat();" onmouseout="menukatc();"> <a href="#">Kategoriler</a>
+                            <div class="menu-box" id="kat_menu" runat="server">
+                                
+                            </div>
+                        </li>
+                        <li><a href="Movies.aspx">Diziler</a></li>
+                        <li><a href="İletisim.aspx">İletişim</a></li>
+                    </ul>
+                </div>
+                
+
+                <div class="sag-menu">
+                    <ul>
+                        <a href="#" runat="server" id="sag_menu_kul_ad" style="text-decoration:none; color:white;"></a>       
+                        <a href="#" runat="server" id="giris_yap" onserverclick="girisyap_textbox_Click" style="text-decoration:none;"><li>Giriş Yap</li></a>
+                        <a href="#" runat="server" id="kayit_ol" onserverclick="kayit_textbox_Click" style="text-decoration:none;"><li>Kayıt Ol</li></a>
+                        <a href="#" runat="server" onserverclick="arama_textbox_Click" style="text-decoration:none;"><li><i class="fa fa-search" aria-hidden="true"></i></li></a>
+                        <li onclick="menu()"><i class="fa fa-bars" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </header> 
+       
+        <div class="login-box" id="login_box_id" runat="server">
+            <div class="login-top">
+            <h2>Giriş Yap</h2>
+            <i onclick="login_box_close();" class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <hr />
+            <label>Kullanıcı Adı : </label>
+            <asp:TextBox ID="TextBox_Kulad" runat="server"  required ></asp:TextBox><br />
+            <br />
+            <label>Şifre : </label>
+            <asp:TextBox ID="TextBox_Sifre" TextMode="Password" runat="server" required ></asp:TextBox>
+            <br /><br />
+            <asp:Button ID="Button_Giris" runat="server" Text="Giriş" style="margin-left:0.4%; cursor:pointer; height:40px;" OnClick="Button_Giris_Click"/>
+            <asp:Button ID="Button_kayit_Yönlendirme" runat="server" Text="Kayıt Ol" style="margin-left:0.4%; margin-top:0.5rem; cursor:pointer; height:40px;"/>
+            <br /><br />
+        </div>
+ 
+       <div class="record-box" id="record_box_id" runat="server">
+            <div class="record-top">
+                <h2>Kayıt Ol</h2>
+                <i onclick="record_box_close();" class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <hr />
+                 <label>Ad : </label>
+                <asp:TextBox ID="TextBox_Ad_record" runat="server" required></asp:TextBox>
+                 <br />
+                <label>Soyad : </label>
+                <asp:TextBox ID="TextBox_Soyad_record" runat="server" required></asp:TextBox>
+               <br />
+                <label>Kullanıcı Adı : </label>
+                <asp:TextBox ID="TextBox_Kulad_record" runat="server" required></asp:TextBox>
+                <br />
+                <label>Şifre : </label>
+                <asp:TextBox ID="TextBox_Sifre_record" runat="server" TextMode="Password"  required></asp:TextBox>
+              <br />
+                <label>E-mail :</label>
+                <asp:TextBox ID="TextBox_Email_record" runat="server" TextMode="Email" required></asp:TextBox>
+                <br />
+                <label>Telefon Numarası :</label>
+                <asp:TextBox ID="TextBox_Tel_record" runat="server" required></asp:TextBox>
+               <br /> <br />
+                <asp:Button ID="Button_Record" runat="server" OnClick="Button_Record_Click" Text="Kayıt Ol" style="margin-left:0.4%; cursor:pointer; height:40px;" />
+                <input id="Button_reset_record" type="reset" value="Temizle"  style="margin-left:0.4%; margin-top:0.5rem; cursor:pointer; height:40px;" />
+                <br />
+        </div>
+   
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+
+             <footer>
+                 <span>Copyright © 2022 Dizi World. Tüm hakları saklıdır.</span>
+                 <div class="footer-about">
+                     <span>Hakkımızda</span>
+                     <ul>
+                         <li>Kullanım Koşulları</li>
+                         <li>Üyelik Sözleşmesi</li>
+                         <li>Çerez Politikası</li>
+                         <li>Gizlilik Politikası</li>
+                         <li><a href="İletisim.aspx">İletişim</a></li>
+                     </ul>
+                 </div>
+                 <div class="footer-social-medya">
+                     <span>Sosyal Medya</span>
+                     <ul>
+                         <li><i class="fa fa-instagram" aria-hidden="true" title="İnstagram"></i></li>
+                         <li><i class="fa fa-twitter" aria-hidden="true" title="Twitter"></i></li>
+                         <li><i class="fa fa-youtube-play" aria-hidden="true" title="Youtube"></i></li>
+                         <li><i class="fa fa-facebook-official" aria-hidden="true" title="Facebook"></i></li>
+                     </ul>
+                 </div>
+                 <div class="footer-applications">
+                     <span>Uygulamalar</span>
+                     <ul>
+                         <li>Apple TV</li>
+                         <li>Android TV</li>
+                         <li>Smart TV</li>
+                     </ul>
+                 </div>
+             </footer>
+            </form>
+    
+   <script src="main.js"></script>
+</body>
+</html>
